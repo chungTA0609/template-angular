@@ -1,0 +1,17 @@
+<div class="layout-container" [ngClass]="containerClass!">
+  <div class="layout-content-wrapper">
+    <!-- top bar -->
+    <app-topbar></app-topbar>
+    <!-- end top bar -->
+
+    <!-- breadcrumb -->
+    <app-breadcrumb class="content-breadcrumb"></app-breadcrumb>
+    <!-- end breadcrumb -->
+
+    <div class="layout-conternt">
+      <router-outlet></router-outlet>
+    </div>
+
+    <div class="layout-mask"></div>
+  </div>
+</div>

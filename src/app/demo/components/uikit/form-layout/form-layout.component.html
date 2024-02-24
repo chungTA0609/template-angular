@@ -1,0 +1,96 @@
+<div class="grid">
+  <div class="col-12 md:col-12">
+    <div class="card p-fluid">
+      <h5>Form layout</h5>
+      <form [formGroup]="contactControl" (ngSubmit)="onSubmit()">
+        <div class="field p-fluid" style="display: flex">
+          <label htmlFor="name1">Name</label>
+          <input
+            pInputText
+            id="name1"
+            type="text"
+            formControlName="firstname"
+            [class]="checkErrorField('firstname') ? 'ng-invalid ng-dirty' : ''"
+          />
+          <small *ngIf="checkErrorField('firstname')"
+            >Enter your username to reset your password.</small
+          >
+          <input
+            pInputText
+            id="name2"
+            type="text"
+            formControlName="lastname"
+            [class]="checkErrorField('lastname') ? 'ng-invalid ng-dirty' : ''"
+          />
+          <small *ngIf="checkErrorField('lastname')"
+            >Enter your username to reset your password.</small
+          >
+        </div>
+        <div class="field p-fluid">
+          <label style="padding-right: 3.5%; padding-top: 5px" htmlFor="twitter"
+            >Twitter</label
+          >
+          <input
+            pInputText
+            id="twitter"
+            type="text"
+            formControlName="twitter"
+            [class]="checkErrorField('twitter') ? 'ng-invalid ng-dirty' : ''"
+          />
+          <small *ngIf="checkErrorField('twitter')"
+            >Enter your username to reset your password.</small
+          >
+        </div>
+        <div class="field p-fluid">
+          <label style="padding-right: 10px; padding-top: 5px" htmlFor="avatar"
+            >Avatar URL</label
+          >
+          <input
+            pInputText
+            id="avatar"
+            type="text"
+            formControlName="avatar"
+            [class]="checkErrorField('avatar') ? 'ng-invalid ng-dirty' : ''"
+          />
+          <small *ngIf="checkErrorField('avatar')"
+            >Enter your username to reset your password.</small
+          >
+        </div>
+        <div class="field p-fluid">
+          <label style="padding-right: 4.5%; padding-top: 5px" htmlFor="notes"
+            >Note</label
+          >
+          <textarea
+            pInputTextarea
+            id="notes"
+            type="text"
+            formControlName="notes"
+            [class]="checkErrorField('notes') ? 'ng-invalid ng-dirty' : ''"
+          ></textarea>
+          <small *ngIf="checkErrorField('notes')"
+            >Enter your username to reset your password.</small
+          >
+        </div>
+        <div
+          class="field"
+          style="position: absolute; right: 6%; padding-top: 10px"
+        >
+          <div style="display: flex">
+            <app-button
+              [label]="'Save'"
+              [disabled]="!contactControl.valid"
+              style="padding-right: 10%"
+              type="submit"
+            ></app-button>
+            <app-button
+              [label]="'Cancel'"
+              [shape]="['outlined']"
+              style="padding-left: 50%"
+            ></app-button>
+          </div>
+          <div style="padding-left: 50%; display: flex"></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
